@@ -1,0 +1,22 @@
+{
+  "name": "chat-client",
+  "version": "1.0.0",
+  "description": "WebSocket Chat Client",
+  "homepage": "https://FilSado.github.io/chat-project",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist -r https://github.com/FilSado/chat-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  }
+}

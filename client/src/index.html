@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebSocket Chat</title>
+</head>
+<body>
+  <!-- Модальное окно выбора псевдонима -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Выберите псевдоним</h2>
+      <input type="text" id="nickname-input" placeholder="Введите псевдоним" maxlength="20" />
+      <button id="submit-nick">Продолжить</button>
+      <p id="error-msg" style="color:red; display:none; margin-top: 8px;"></p>
+    </div>
+  </div>
+
+  <!-- Основной чат -->
+  <div id="chat-container" style="display:none;">
+    <div id="users-list" class="users-list"></div>
+    <div class="chat-area">
+      <div id="chat-window" class="chat-window"></div>
+      <form id="message-form" class="message-form" autocomplete="off">
+        <input type="text" id="message-input" placeholder="Type your message here" maxlength="500" />
+      </form>
+    </div>
+  </div>
+</body>
+</html>

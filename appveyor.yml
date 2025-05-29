@@ -1,0 +1,26 @@
+version: 1.0.{build}
+
+environment:
+  NODE_ENV: 'production'
+
+install:
+  - ps: Install-Product node 18
+
+build_script:
+  - cd client
+  - npm install
+  - npm run build
+
+artifacts:
+  - path: client/dist
+    name: client-dist
+
+deploy:
+  - provider: GitHubPages
+    auth_token:
+      secure: <GITHUB_TOKEN> 
+    branch: gh-pages
+    folder: client/dist
+    on:
+      branch: main
+
