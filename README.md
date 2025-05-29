@@ -10,7 +10,7 @@
 ## Ссылки
 
 - Клиент (GitHub Pages): [https://FilSado.github.io/chat-project](https://FilSado.github.io/chat-project)  
-- Сервер (Render): https://your-render-url.onrender.com  
+- Сервер (Render): (https://chat-project-2-n4ob.onrender.com) 
 
 ---
 
