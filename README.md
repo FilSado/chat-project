@@ -9,6 +9,7 @@
 
 ## Ссылки
 
+- Сборка : [![Build status](https://ci.appveyor.com/api/projects/status/7vor5jeffmxqijf2?svg=true)](https://ci.appveyor.com/project/FilSado/chat-project-8yetc)
 - Клиент (GitHub Pages): [https://FilSado.github.io/chat-project](https://FilSado.github.io/chat-project)  
 - Сервер (Render): (https://chat-project-2-n4ob.onrender.com) 
 
