@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack serve --open",
     "build": "npx webpack --mode production",
-    "deploy": "gh-pages -d dist -r https://github.com/FilSado/chat-project.git"
+    "deploy": "gh-pages -d dist -r https://${GITHUB_TOKEN}@github.com/FilSado/chat-project.git"
+
+
   },
   "author": "",
   "license": "ISC",

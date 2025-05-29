@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 environment:
-  NODE_ENV: 'development'  
+  NODE_ENV: 'development'
 
 install:
   - ps: Install-Product node 20
@@ -13,16 +13,13 @@ build_script:
   - cd client && npm ls webpack-cli
   - cd client && npm run build
 
+deploy_script:
+  - ps: |
+      git config --global user.email "evgenia.maksimovna00@gmail.com"
+      git config --global user.name "Евгения"
+      cd client
+      npx gh-pages -d dist -r https://%GITHUB_TOKEN%@github.com/FilSado/chat-project.git
+
 artifacts:
   - path: client/dist
     name: client-dist
-
-deploy:
-  - provider: GitHubPages
-    auth_token:
-      secure: <GITHUB_TOKEN>
-    branch: gh-pages
-    folder: client/dist
-    on:
-      branch: main
-
