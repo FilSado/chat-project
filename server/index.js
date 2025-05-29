@@ -1,6 +1,7 @@
 const WebSocket = require('ws');
 const express = require('express');
 const http = require('http');
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
@@ -9,6 +10,13 @@ const wss = new WebSocket.Server({ server });
 const PORT = process.env.PORT || 3000;
 
 let users = new Map(); // nickname -> ws
+
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Обработчик корневого маршрута — просто для проверки
+app.get('/', (req, res) => {
+  res.send('Сервер WebSocket работает! Перейди в клиентское приложение для чата.');
+});
 
 function broadcastUsers() {
   const userList = Array.from(users.keys());

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build-client": "cd client && npm install && npm run build",
+    "copy-client": "cpx \"client/dist/**/*\" server/client/dist",
+    "build": "npm run build-client && npm run copy-client"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0"
+  }
+}
