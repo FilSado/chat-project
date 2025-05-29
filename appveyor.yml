@@ -5,16 +5,15 @@ environment:
 
 install:
   - ps: Install-Product node 20
-  - cd client && npm install
+  
 
 build_script:
   - mkdir C:\Users\appveyor\AppData\Roaming\npm
+  - npm cache clean --force
   - cd client && npm install
+  - cd client && npm install --save-dev webpack-cli
+  - cd client && npm list webpack-cli
   - cd client && npm run build
-
-
-
-
 
 artifacts:
   - path: client/dist
@@ -23,8 +22,9 @@ artifacts:
 deploy:
   - provider: GitHubPages
     auth_token:
-      secure: <GITHUB_TOKEN> 
+      secure: <GITHUB_TOKEN>
     branch: gh-pages
     folder: client/dist
     on:
       branch: main
+
