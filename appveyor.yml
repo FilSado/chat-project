@@ -5,12 +5,13 @@ environment:
 
 install:
   - ps: Install-Product node 20
+  - ps: Remove-Item -Recurse -Force client\node_modules, client\package-lock.json
+  - cd client && npm cache clean --force
   - cd client && npm install
-  
 
 build_script:
-  - mkdir C:\Users\appveyor\AppData\Roaming\npm
-  - cd client && npm run build
+- cd client && npm ls webpack-cli
+- cd client && npm run build
 
 artifacts:
   - path: client/dist
