@@ -1,12 +1,10 @@
 version: 1.0.{build}
 
 environment:
-  NODE_ENV: 'production'
+  NODE_ENV: 'development'  
 
 install:
   - ps: Install-Product node 20
-  - ps: if (Test-Path client\node_modules) { Remove-Item client\node_modules -Recurse -Force }
-  - ps: if (Test-Path client\package-lock.json) { Remove-Item client\package-lock.json -Force }
   - cd client && npm cache clean --force
   - cd client && npm install
 
@@ -27,5 +25,4 @@ deploy:
     folder: client/dist
     on:
       branch: main
-
 
