@@ -4,10 +4,11 @@ environment:
   NODE_ENV: 'production'
 
 install:
-  - ps: Install-Product node 18
+  - ps: Install-Product node 20
   - cd client && npm install
 
 build_script:
+  - mkdir C:\Users\appveyor\AppData\Roaming\npm
   - cd client && npm install
   - cd client && npm run build
 
