@@ -5,7 +5,7 @@
   "homepage": "https://FilSado.github.io/chat-project",
   "scripts": {
     "start": "webpack serve --open",
-    "build": "webpack --mode production",
+    "build": "npx webpack --mode production",
     "deploy": "gh-pages -d dist -r https://github.com/FilSado/chat-project.git"
   },
   "author": "",

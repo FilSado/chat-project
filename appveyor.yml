@@ -8,7 +8,12 @@ install:
   - cd client && npm install
 
 build_script:
+  - cd client && npm install
   - cd client && npm run build
+
+
+
+
 
 artifacts:
   - path: client/dist
