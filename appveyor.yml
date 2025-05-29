@@ -5,11 +5,10 @@ environment:
 
 install:
   - ps: Install-Product node 18
+  - cd client && npm install
 
 build_script:
-  - cd client
-  - npm install
-  - npm run build
+  - cd client && npm run build
 
 artifacts:
   - path: client/dist
@@ -23,4 +22,3 @@ deploy:
     folder: client/dist
     on:
       branch: main
-
